@@ -9,8 +9,15 @@ import java.util.List;
 /**
  * There is another service which is working in this URL and value should be anything
  */
-@FeignClient(url = "http://localhost:8082",value = "Question-Client")
+//@FeignClient(url = "http://localhost:8082",value = "Question-Client")
+
+/**
+ * QuestionService this is nothing but a service id which is present like this in application.properties
+ * spring.application.name=QuestionService (While using load balancing this will work fine)
+ */
+@FeignClient(name = "QUESTION-SERVICE")
 public interface QuestionClient {
+
     /**
      * This Api is already present in the Question service controller class
      * From there we will collect the data by the help of FeignClient

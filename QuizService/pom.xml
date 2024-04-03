@@ -15,6 +15,7 @@
     <description>This is a quiz service</description>
     <properties>
         <java.version>17</java.version>
+        <!--        We need to add this to work with spring cloud like eureka and feign client-->
         <spring-cloud.version>2023.0.1</spring-cloud.version>
     </properties>
     <dependencies>
@@ -47,7 +48,19 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--        This is to make our project as a eureka client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!--        This is to perform load balancing our project-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
     </dependencies>
+    <!--        We need to add this to work with spring cloud like eureka and feign client-->
+
     <dependencyManagement>
         <dependencies>
             <dependency>
